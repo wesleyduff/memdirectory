@@ -2,9 +2,11 @@ extends layout
 
 block content
 	h1= title
-	form(id="frmUserProfile", method="post", action="")
+	form(id="frmUserProfile", method="post", ng-submit="submit()")
 		label(for="FullName") Full name
-		input(type="text", name="FullName", id="FullName")
+		input(type="text", name="FullName", id="FullName", ng-model="fullName")
 		label(for="Email") Email
-		input(type="text", placeholder="email", name="Email", id="Email")
+		input(type="email", name="Email", id="Email", ng-model="email")
 		input(type="submit", value="#{buttonText}")
+	#output
+		| hello {{fullName}}

@@ -1,4 +1,10 @@
 extends layout
 
 block content
-	h1= title
+	#container.col
+		h1= title
+		label(for="MyName") Enter name:
+		input(type="text", ng-model="name", name="MyName", id="MyName")
+		| hello 
+		span(ng-bind="name")
+		| !
