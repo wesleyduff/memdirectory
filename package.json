@@ -2,13 +2,18 @@
   "name": "application-name",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node app.js"
+  "main": "app.js",
+  "engines" : {
+	"node" : "0.8",
+	"npm" : ">=1.1"
   },
+  "repository": "https://github.com/slysop/mongooseBook",
+  "author": "Wes Duff",
+  "license": "MIT",
   "dependencies": {
     "express": "3.4.4",
     "jade": "*",
 	"connect": "2.7.x",
-	"mongoose": "3.6.x"
+	"mongoose": "3.5.7"
   }
 }
