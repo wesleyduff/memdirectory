@@ -1,16 +1,16 @@
-var mongoose = require( 'mongoose ');
+var mongoose = require( 'mongoose');
 var User = mongoose.model( 'User' );
 
 // Get all users
-exports.create = function(req, res){
-	rs.render('user-index', {
+exports.index = function(req, res){
+	res.render('user-index', {
 		title: 'All Users will display here'
 	});
 };
 
 // Get user creation form
 exports.create = function(req, res){
-	rs.render('user-form', {
+	res.render('user-form', {
 		title: 'Create user',
 		buttonText: "Join!"
 	});
