@@ -4,9 +4,6 @@ var mongoose = require( 'mongoose' );
 //Here we find an appropriate database to connect to, defaulting to localhst if we don't find one.
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/MongoosePM'
 
-//The http server will listen to an appropriate port, or default to port 5000.
-var theport = process.env.PORT || 5000;
-
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
 mongoose.connect(uristring, function (err, res) {
@@ -21,7 +18,7 @@ mongoose.connect(uristring, function (err, res) {
       HANDLE EVENTS
    ******************************************** */
 mongoose.connection.on('connected', function () {
-  console.log('Mongoose connected to ' + dbURI);
+  console.log('Mongoose connected to ' + uristring);
 });
 
 mongoose.connection.on('error',function (err) {
