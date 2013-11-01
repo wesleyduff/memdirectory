@@ -10,10 +10,33 @@ exports.create = function (req, res) {
 };
 
 exports.index = function (req, res) {
-    res.render('user-index', {
-        title: 'Users',
-        buttonText: "Hello"
-    });
+	var isLoggedIn = false;
+    if(typeof(Storage) !== "undefined")
+	{
+		var user = JSON.parse(localStorage.getItem("user"));
+		if(user !== "undefined"){
+			//logged in
+			res.render('user-page', {
+				title : user.name,
+				name: user.name,
+				email: user.email,
+				userId: user._id
+			})
+		} else {
+			res.redirect('/login');
+		}
+	} else {
+		if(req.session.loggedIn){
+			res.render('user-page', {
+				title : req.session.user.name,
+				name: req.session.user.name,
+				email: req.session.user.email,
+				userId: req.session.user._id
+			})
+		} else {
+			res.redirect('/login');
+		}
+	}
 };
 
 // POST new user creation form
@@ -28,7 +51,6 @@ exports.doCreate = function (req, res) {
         if (err) {
             console.log(err);
             if (err.code === 11000) {
-                alert('error');
                 res.redirect('/user/new?exists=true');
             } else {
                 res.redirect('/?error=true');
@@ -36,7 +58,8 @@ exports.doCreate = function (req, res) {
         } else {
             // Success
             console.log("User cretated and savced: " + user);
-            res.redirect('/user/new?saved=true');
+			
+            res.redirect('/user?saved=true');
         }
     });
 };

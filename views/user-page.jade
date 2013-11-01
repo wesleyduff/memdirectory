@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #userPage(ng-controller="UserPage")
+    h1 Mongoose Project Management
+    h2 {{pageName}}
+    p Email: {{email}}
+      h3 Actons
+      ul
+        li
+          a(href="/project/new") Create a new project
+        li 
+          a(href="/user/edit") Edit user info
+        li 
+          a(href="/user/delete") Delete {{name}}
+        li
+          a(href="/logout") Logout {{name}}

@@ -20,6 +20,11 @@ angular.module('app', [])
         UserService.saveUser(jsonUser);
     };
 }])
+.controller('UserPage', ['$scope', function($scope) {
+	$scope.name = "User Name";
+	$scope.pageName = "User Page Name";
+	$scope.email = "email@email.com";
+}])
 
 /* ***************************************
 **       SERVICES
