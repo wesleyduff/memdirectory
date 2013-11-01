@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	#h1 Login!
+	#h1= title
 	#login(ng-controller="LoginController")
 		form(id="loginForm", method="post", ng-submit="doLogin()" )
 			.formField

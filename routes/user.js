@@ -10,32 +10,15 @@ exports.create = function (req, res) {
 };
 
 exports.index = function (req, res) {
-	var isLoggedIn = false;
-    if(typeof(Storage) !== "undefined")
-	{
-		var user = JSON.parse(localStorage.getItem("user"));
-		if(user !== "undefined"){
-			//logged in
-			res.render('user-page', {
-				title : user.name,
-				name: user.name,
-				email: user.email,
-				userId: user._id
-			})
-		} else {
-			res.redirect('/login');
-		}
+	if(req.session.loggedIn === true){
+		res.render('user-page', {
+			title : req.session.user.name,
+			name: req.session.user.name,
+			email: req.session.user.email,
+			userId: req.session.user._id
+		});
 	} else {
-		if(req.session.loggedIn){
-			res.render('user-page', {
-				title : req.session.user.name,
-				name: req.session.user.name,
-				email: req.session.user.email,
-				userId: req.session.user._id
-			})
-		} else {
-			res.redirect('/login');
-		}
+		res.redirect('/login');
 	}
 };
 
@@ -58,8 +41,9 @@ exports.doCreate = function (req, res) {
         } else {
             // Success
             console.log("User cretated and savced: " + user);
-			
-            res.redirect('/user?saved=true');
+			req.session.user = { "name" : user.name, "email": user.email, "_id": user._id };
+			req.session.loggedIn = true;
+			res.redirect( '/user' );
         }
     });
 };
