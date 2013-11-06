@@ -1,11 +1,23 @@
 //Build module
 angular.module('app', [])
-
+/* ***************************************
+**       FACTORIES
+**************************************** */
+.factory('userFactory', function($http){
+  return {
+    getUser : function(){
+      return [{"user" : "wes"}];
+    },
+    saveUser : function(jsonUser, callback){
+      $http.post('/user/save', jsonUser).success(callback);
+    },
+  }
+})
 
 /* ***************************************
 **       CONTROLLERS 
 **************************************** */
-.controller('Ctrl', ['$scope', '$http', function ($scope, $http) {
+.controller('Ctrl', ['$scope', '$http', 'userFactory', function ($scope, $http, userFactory) {
     $scope.name = 'Whirled';
     $scope.fullName = "Wesley Duff";
     $scope.email = "slysop@gmail.com";
@@ -17,13 +29,13 @@ angular.module('app', [])
             lastLogin: Date.now()
         }
         var jsonUser = JSON.stringify(user);
-        $http.post('/user/save', jsonUser).success(function(data){
-			if(typeof data === "object" && data.status === "error"){
-				$('#errorMessage').html('Error saveing user : ' + jsonUser.fullName);
-			} else if(typeof data === "object") {
-				$('#errorMessage').html('Saved User: ' + data.name);
-			}
-		});
+        var obj = userFactory.saveUser(jsonUser, function(result){
+          if(result.status === "error"){
+            $('#errorMessage').html('Error saveing user : ' + user.fullName);
+          } else {
+            $('#errorMessage').html('Saved User: ' + result.name);
+          }
+        });
     };
 }])
 .controller('UserPage', ['$scope', function($scope) {
@@ -39,32 +51,4 @@ angular.module('app', [])
 		}
 		alert(project.name);
 	}
-}])
-/* ***************************************
-**       SERVICES
-NOTE * this worked and saved but did not return the JSON
-**************************************** */
-.service('UserService', function () {
-    this.saveUser = function (jsonUser) {
-		$http.post('/user/save', jsonUser).success(function(data){
-			return data;
-		});
-	}
-   //.ajax({
-   //       contentType: 'application/json; charset=UTF-8',
-   //       data: jsonUser,
-   //       dateType: "json",
-   //       error: function () {
-   //           console.log('error with submit');
-   //       },
-   //       success: function (data) {
-   //   		console.dir(data);
-   //   		if(typeof data === "object" || data.length > 0){
-   //   			return data;
-   //   		}
-   //       },
-   //       url: "/user/save",
-   //       type: "POST"
-   //   });
-   //
-});
+}]);
