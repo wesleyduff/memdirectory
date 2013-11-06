@@ -2,6 +2,8 @@ extends layout
 
 block content
 	h1= title
+	#errorMessage(style="border:1px solid black; padding:10px;")
+		| . no errors
 	form(id="frmUserProfile", method="post", ng-submit="submit()")
 		label(for="FullName") Full name
 		input(type="text", name="FullName", id="FullName", ng-model="fullName")

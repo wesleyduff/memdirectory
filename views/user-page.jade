@@ -1,11 +1,10 @@
 extends layout
-
 block content
   #userPage(ng-controller="UserPage")
-    h1 Mongoose Project Management
+    h1= title
     h2 {{pageName}}
     p Email: {{email}}
-      h3 Actons
+      h3 Actions
       ul
         li
           a(href="/project/new") Create a new project

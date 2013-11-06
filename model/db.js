@@ -49,18 +49,3 @@ var userSchema = new mongoose.Schema({
 
 // Build the User model
 mongoose.model( 'User', userSchema );
-
-/* ********************************************
-      PROJECT SCHEMA
-   ******************************************** */
-var projectSchema = new mongoose.Schema({
-  projectName: String,
-  createdOn: { type: Date, default: Date.now },
-  modifiedOn: Date,
-  createdBy: String,
-  contributors: String,
-  tasks: String
-});
-
-// Build the Project model
-mongoose.model( 'Project', projectSchema );

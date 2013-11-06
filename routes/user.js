@@ -18,13 +18,15 @@ exports.index = function (req, res) {
 			userId: req.session.user._id
 		});
 	} else {
-		res.redirect('/login');
+		res.render('user-page', {
+			title : "Welcome User"
+		});
 	}
 };
 
 // POST new user creation form
 exports.doCreate = function (req, res) {
-    console.log(req);
+    //console.log(req);
     User.create({
         name: req.body.fullName,
         email: req.body.email,
@@ -32,18 +34,18 @@ exports.doCreate = function (req, res) {
         lastLogin: req.body.lastLogin
     }, function (err, user) {
         if (err) {
-            console.log(err);
+            console.log("error: ===== " + err);
             if (err.code === 11000) {
-                res.redirect('/user/new?exists=true');
+				res.json({"status" : "error", "error" : "Email already exists"});
             } else {
-                res.redirect('/?error=true');
+                res.json({"status" : "error", "error" : "Error adding user: " + req.body.fullName});
             }
         } else {
             // Success
             console.log("User cretated and savced: " + user);
 			req.session.user = { "name" : user.name, "email": user.email, "_id": user._id };
 			req.session.loggedIn = true;
-			res.redirect( '/user' );
+			res.json(user);
         }
     });
 };
