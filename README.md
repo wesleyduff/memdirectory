@@ -32,7 +32,7 @@ SETUP ENVIRONMENT
 
 	$ sudo apt-get install python-software-properties python g++ make
 	
->>Install Node.js. This is recommended by Node.js Developers (if you dont have apt you can search Nodejs's website for an installer for your platform)
+>1. Install Node.js. This is recommended by Node.js Developers (if you dont have apt you can search Nodejs's website for an installer for your platform)
 
 	$ sudo add-apt-repository pp:chris-lea/node.js
 	$ sudo apt-get update
@@ -66,19 +66,19 @@ SETUP ENVIRONMENT
 
 	alias mongostart='sudo /PATH/TO/mongodb/bin/mongod'
 	
->>>* Now close the terminal and start a new fresh window
->>>* type in
+>>* Now close the terminal and start a new fresh window
+>>* type in
 
 	$ mongostart
 	
->>>* You should see your mongoDB start up. You can also include the path to the mongo executable to have quick access to the MongoDB shell. But I dont use it that much so I left it out.
->3. Install Express.js
+>>* You should see your mongoDB start up. You can also include the path to the mongo executable to have quick access to the MongoDB shell. But I dont use it that much so I left it out.
+>4. Install Express.js
 
 	$ sudo npm install -g express
 	
 >>-g flag there in command line installs express globally, meaning that we can use it wherever we want.
 
->4. Install mongoose
+>5. Install mongoose
 >>* mongoose, express and jade are all dependencies and dependencies are loaded in node.js's package.json file.
 >>* To install those you will need to run 
 
