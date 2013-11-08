@@ -108,3 +108,16 @@ GETTING STARTED
 	$ node app
 	
 >> This starts your app on localhost:3000
+
+NOTE : ctrl + c to stop the node server and the mongodb server. The node server and the mongodb server need to be started in their own terminal windows.
+
+Basic setup 
+------------
+Factory "userFactory" is a service that calls the web api "Save User" to save the user to the mongo database.
+Review /routes/user.js -> Method doCreate.
+JSON is returned with the error or the user that was saved.
+
+Updated : 11/7/2013
+Check back for updates. 
+As of right now Twitter bootstrap is not included in this boiler plate stack.
+I will add it in by 11/10/2013

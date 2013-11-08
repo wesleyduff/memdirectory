@@ -1,7 +1,8 @@
 // Bring Mongoose into the project
 var mongoose = require( 'mongoose' );
 
-//Here we find an appropriate database to connect to, defaulting to localhst if we don't find one.
+//Here we find an appropriate database to connect to, defaulting to localhost if we don't find one.
+//The first two are setup for Heroku. If those are not found then we run locally :)
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/MongoosePM'
 
 // Makes connection asynchronously.  Mongoose will queue up database

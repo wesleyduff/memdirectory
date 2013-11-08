@@ -1,3 +1,17 @@
+/* ***************************************
+Basic setup 
+------------
+Factory "userFactory" is a service that calls the web api "Save User" to save the user to the mongo database.
+Review /routes/user.js -> Method doCreate.
+JSON is returned with the error or the user that was saved.
+
+Updated : 11/7/2013
+Check back for updates. 
+As of right now Twitter bootstrap is not included in this boiler plate stack.
+I will add it in by 11/10/2013
+*************************************** */
+
+
 //Build module
 angular.module('app', [])
 /* ***************************************
@@ -17,7 +31,7 @@ angular.module('app', [])
 /* ***************************************
 **       CONTROLLERS 
 **************************************** */
-.controller('Ctrl', ['$scope', '$http', 'userFactory', function ($scope, $http, userFactory) {
+.controller('MainCtrl', ['$scope', '$http', 'userFactory', function ($scope, $http, userFactory) {
     $scope.name = 'Whirled';
     $scope.fullName = "Wesley Duff";
     $scope.email = "slysop@gmail.com";
@@ -42,13 +56,4 @@ angular.module('app', [])
 	$scope.name = "User Name";
 	$scope.pageName = "User Page Name";
 	$scope.email = "email@email.com";
-}])
-.controller('projectCreate', ['$scope', function($scope){
-	$scope.name = "Project Name";
-	$scope.submitProjectForm = function(){
-		var project = {
-			name : this.name
-		}
-		alert(project.name);
-	}
 }]);
