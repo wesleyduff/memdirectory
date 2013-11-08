@@ -77,6 +77,7 @@ SETUP ENVIRONMENT
 	$ sudo npm install -g express
 	
 >>-g flag there in command line installs express globally, meaning that we can use it wherever we want.
+
 >4. Install mongoose
 >>* mongoose, express and jade are all dependencies and dependencies are loaded in node.js's package.json file.
 >>* To install those you will need to run 
