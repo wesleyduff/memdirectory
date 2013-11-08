@@ -22,9 +22,10 @@ MEAN + Friends
 
 ***
 
-INITAL SETUP
+SETUP ENVIRONMENT
 ============
 >NOTE - There are installers for windows and other platforms instead of using the command line
+>The instructions are for a Mac or Linux
 >1. Install Node.js
 >> Note :
 >> * Node needs a couple things in order to run. Python and a C compiler. Using APT for this example (in the terminal type (if you have apt))
@@ -43,8 +44,37 @@ INITAL SETUP
 	
 >>After you type that in you should get your version of Node.js. 
 
->2. Install Node.js
->3. Install NPM for Node.js
+>2. Install NPM - but first check to see if NPM is installed
+
+	$ npm --version
+	
+>>If not then install it
+
+	$ sudo apt-get install npm
+	
+>3. Install MongoDB
+
+	$ sudo apt-get install mongodb
+	
+>>* I like to open my profile and include a short cut to start the mongodb server. Here is how to do it.
+
+	$ open ~/.profile
+	
+>>>Now the file should be open.
+>>>* Add /PATH/TO/mongodb/bin in your PATH
+>>>* Add
+
+	alias mongostart='sudo /PATH/TO/mongodb/bin/mongod'
+	
+>>>* Now close the terminal and start a new fresh window
+>>>* type in
+
+	$ mongostart
+	
+>>>* You should see your mongoDB start up. You can also include the path to the mongo executable to have quick access to the MongoDB shell. But I dont use it that much so I left it out.
+>3. Install Express.js
+
+	$ sudo
 >4. Install express
 >5. Install Jade
 
