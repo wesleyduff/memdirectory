@@ -24,12 +24,25 @@ MEAN + Friends
 
 INITAL SETUP
 ============
+>NOTE - There are installers for windows and other platforms instead of using the command line
 >1. Install Node.js
 >> Note :
 >> * Node needs a couple things in order to run. Python and a C compiler. Using APT for this example (in the terminal type (if you have apt))
 
 	$ sudo apt-get install python-software-properties python g++ make
 	
+>>Install Node.js. This is recommended by Node.js Developers (if you dont have apt you can search Nodejs's website for an installer for your platform)
+
+	$ sudo add-apt-repository pp:chris-lea/node.js
+	$ sudo apt-get update
+	$ sudo apt-get intall nodejs
+
+>>If everything went well then you can check your node version in your terminal by typing in
+
+	$ node --version
+	
+>>After you type that in you should get your version of Node.js. 
+
 >2. Install Node.js
 >3. Install NPM for Node.js
 >4. Install express
