@@ -74,9 +74,16 @@ SETUP ENVIRONMENT
 >>>* You should see your mongoDB start up. You can also include the path to the mongo executable to have quick access to the MongoDB shell. But I dont use it that much so I left it out.
 >3. Install Express.js
 
-	$ sudo
->4. Install express
->5. Install Jade
+	$ sudo npm install -g express
+	
+>>-g flag there in command line installs express globally, meaning that we can use it wherever we want.
+>4. Install mongoose
+>>* mongoose, express and jade are all dependencies and dependencies are loaded in node.js's package.json file.
+>>* To install those you will need to run 
+
+	$ npm install 
+	
+>>Run this after you have all the files cloned from this repo
 
 GETTING STARTED
 ===============
@@ -87,8 +94,16 @@ GETTING STARTED
 >   - You can call it something else if you like
 >4. git init
 >   - This initializes your repository
->5. git remote add stack https://github.com/<yourname>/<your repo>
+>5. git remote add stack https://github.com/&lt;yourname&gt;/&lt;your repo&gt;
 >   - Example Mine is https://github.com/slysop/mean-boilerplate
 >6. Clone my repository from github to your folder
 >   - URL : http://github.com/slysop/mean-boilerplate
->7. 
+>7. Once you have the code on your local machine and everything is installed open you terminal if it is not already open and type
+
+	$ mongostart
+	
+>>This starts your mongoDb server if you setup the alias
+
+	$ node app
+	
+>>This starts your app on localhost:3000
