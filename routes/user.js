@@ -9,6 +9,11 @@ exports.create = function (req, res) {
     });
 };
 
+exports.getAllUsers = function(req, res){
+    console.log("TODO: Implement getAllUsers");
+    res.json([{"status" : "error", "error" : "Not yet implemented : getAllUsers"}]);
+}
+
 exports.index = function (req, res) {
 	if(req.session.loggedIn === true){
 		res.render('user-page', {

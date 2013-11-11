@@ -36,6 +36,7 @@ app.get('/', routes.index);
 app.get('/user', user.index);          // Current user profile
 app.get('/user/new', user.create);     // Create new user form
 app.post('/user/save', user.doCreate);  // Create new user action
+app.get('/users', user.getAllUsers); //get all the users
 //app.get('/user/edit', user.edit);      // Edit current user form
 //app.post('/user/edit', user.doEdit);   // Edit current user action
 //qpp.get('/user/delete', user.confirmDelete); // delete current//user form

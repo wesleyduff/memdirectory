@@ -22,6 +22,9 @@ angular.module('app', [])
     getUser : function(){
       return [{"user" : "wes"}];
     },
+    getAllUsers : function(callback){
+      $http.get('/users').success(callback);
+    },
     saveUser : function(jsonUser, callback){
       $http.post('/user/save', jsonUser).success(callback);
     },
@@ -35,21 +38,33 @@ angular.module('app', [])
     $scope.name = 'Whirled';
     $scope.fullName = "Wesley Duff";
     $scope.email = "slysop@gmail.com";
-    $scope.submit = function () {
-        var user = {
-            fullName: this.fullName,
-            email: this.email,
-            modifiedOn: Date.now(),
-            lastLogin: Date.now()
+    //Get All Users
+    //Basic setup of API
+    $scope.getAllUsers = function(){
+      alert('Basic API call initialized');
+      userFactory.getAllUsers(function(result){
+        if(result.length && result[0].status === "error"){
+          $('#errorMessage').html('Error : ' + result[0].error);
+        } else {
+          //TODO: NOT YET IMPLEMENTED
         }
-        var jsonUser = JSON.stringify(user);
-        var obj = userFactory.saveUser(jsonUser, function(result){
-          if(result.status === "error"){
-            $('#errorMessage').html('Error saveing user : ' + user.fullName);
-          } else {
-            $('#errorMessage').html('Saved User: ' + result.name);
-          }
-        });
+      });
+    };
+    $scope.submit = function () {
+      var user = {
+          fullName: this.fullName,
+          email: this.email,
+          modifiedOn: Date.now(),
+          lastLogin: Date.now()
+      }
+      var jsonUser = JSON.stringify(user);
+      userFactory.saveUser(jsonUser, function(result){
+        if(result.status === "error"){
+          $('#errorMessage').html('Error saveing user : ' + user.fullName);
+        } else {
+          $('#errorMessage').html('Saved User: ' + result.name);
+        }
+      });
     };
 }])
 .controller('UserPage', ['$scope', function($scope) {
