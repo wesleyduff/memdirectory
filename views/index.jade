@@ -5,12 +5,12 @@ block content
 	.members.col-xs-12
 		ul.col-xs-12
 			li(ng-repeat="iuser in allGenUsers | filter:searchmembers").user.row
-				.col-xs-12
+				.col-xs-12.col-sm-12.col-md-2
 					a
 						img(ng-src="{{iuser.user.picture}}", height="300").rectangle_image
-				.col-xs-12
+				.col-xs-12.col-sm-12.col-md-9.col-md-offset-1
 					ul
-						li {{iuser.user.name.first}} {{iuser.user.name.last}}
+						li.text-large {{iuser.user.name.first}} {{iuser.user.name.last}}
 						li email : {{iuser.user.email}}
 				.col-xs-12.userMore
 					.fullwidth.row

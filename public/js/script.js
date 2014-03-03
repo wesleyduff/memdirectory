@@ -43,44 +43,11 @@ angular.module('app', [])
 .controller('MainCtrl', ['$scope', '$http', 'userFactory', 'userGen', function ($scope, $http, userFactory, userGen) {
     var demo_getNumberOfGeneratedUsers = 30;
 
-    var allGenUsers = [];
-
     $scope.init = function(){
         userGen.getUsers(function(result){
             console.dir(result);
             $scope.allGenUsers = result.results;
         });
-
-       $scope.allGenUsers = allGenUsers;
-    };
-
-    //Get All Users
-    //Basic setup of API
-    $scope.getAllUsers = function(){
-      alert('Basic API call initialized');
-      userFactory.getAllUsers(function(result){
-        if(result.length && result[0].status === "error"){
-          $('#errorMessage').html('Error : ' + result[0].error);
-        } else {
-          //TODO: NOT YET IMPLEMENTED
-        }
-      });
-    };
-    $scope.submit = function () {
-      var user = {
-          fullName: this.fullName,
-          email: this.email,
-          modifiedOn: Date.now(),
-          lastLogin: Date.now()
-      }
-      var jsonUser = JSON.stringify(user);
-      userFactory.saveUser(jsonUser, function(result){
-        if(result.status === "error"){
-          $('#errorMessage').html('Error saveing user : ' + user.fullName);
-        } else {
-          $('#errorMessage').html('Saved User: ' + result.name);
-        }
-      });
     };
 }])
 .controller('UserPage', ['$scope', function($scope) {

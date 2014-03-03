@@ -6,11 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
-@media (max-width: 767px) {
-    .fullwidth {margin-left:-15px; margin-right:-15px;}
-    ul { margin:0; padding:0; }
-    li {list-style: none; }
-    a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
+
+.fullwidth {margin-left:-15px; margin-right:-15px;}
+ul { margin:0; padding:0; }
+li {list-style: none; }
+a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
+
+@media (max-width: 768px) {
     .row{margin-left:-15px;}
     body {padding:0;}
     .circular_image img {
@@ -138,5 +140,110 @@ a {
     }
     .members .userMore > div div:last-child {
         color:#00af5e;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-large {
+        font-size:55px;
+    }
+
+    nav.container {
+        background-color: #00af5e;
+        color:white;
+        padding-top:20px;
+    }
+    nav.container input{
+        border:1px solid #2D7A5E;
+        border-radius: 5px;
+        color:#000;
+        height:45px;
+    }
+
+    /* Masthead */
+    nav.container {
+        background-color: #00af5e;
+        color:white;
+        padding-top:10px;
+    }
+    nav.container input{
+        border:1px solid #2D7A5E;
+        border-radius: 5px;
+        color:#000;
+        height:35px;
+    }
+
+    nav.container form {
+        font-size: 2em;
+    }
+
+    nav form a {
+        color:white;
+    }
+
+    nav form a:visited {
+        color:white;
+    }
+
+    nav form a:active, nav form a:hover {
+        color:#2D7A5E;
+    }
+
+    nav ul {
+        background-color: slategray;
+        color:#0480be;
+    }
+
+    .subnav {
+        padding-top:10px;
+        margin-top:10px;
+    }
+
+    .subnav li {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .subnav li a {
+        color:white;
+    }
+
+    .subnav li a:active, .subnav li a:hover {
+        color:#00af5e;
+    }
+
+    .subnav li {
+        border-right:1px solid white;
+    }
+
+    .subnav li:last-child {
+        border-right:none;
+    }
+
+    /* Member User */
+    .members .user > div:first-child a {
+        border-radius: 86px;
+        border: 11px solid slateblue;
+        margin-bottom: 0;
+        display: block;
+        height: 175px;
+        width: 175px;
+        padding: 1px;
+        position: relative;
+        top:-5px;
+    }
+    .members .user > div a img.rectangle_image {
+        width: 150px;
+        height: 150px;
+        -webkit-border-radius: 75px;
+        -moz-border-radius: 75px;
+        -ms-border-radius: 75px;
+        -o-border-radius: 75px;
+        border-radius: 75px;
+        position:relative;
+        top:0;
+    }
+    .members .user > div:nth-child(2) {
+        margin:0 0 0 30px;
     }
 }
