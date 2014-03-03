@@ -1,9 +1,14 @@
 extends layout
 
 block content
-	h1= title
-		p Welcome to {{name}}
-		ul
-			li
-				button(ng-click="getAllUsers()")
-					| get all users
+	h1 Church Members
+	.members.col-xs-12
+		ul.col-xs-12
+			li(ng-repeat="iuser in allGenUsers").user.row
+				.col-xs-3
+					a.circular_image
+						img(ng-src="{{iuser.user.picture}}").clipCircle
+				.col-xs-9
+					ul
+						li {{iuser.user.name.first}} {{iuser.user.name.last}}
+						li email : {{iuser.user.email}}
