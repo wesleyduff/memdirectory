@@ -1,4 +1,4 @@
-MEAN + Friends
+Members Directory Mobile APP - RESPONSIVE using MEAN
 ===============
 
 ## Frameworks used ##
