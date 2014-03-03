@@ -11,20 +11,21 @@ html(ng-app="app")
 	script(src='http://code.angularjs.org/1.2.0-rc.3/angular.min.js', type='text/javascript')
 	script(src='/js/bootstrap.min.js' type='text/javascript')
 	script(src='/js/script.js', type='text/javascript')
-body(ng-controller="MainCtrl")
-	nav(ng-init="init()").container
+body(ng-controller="MainCtrl").container
+	nav(ng-init="init()").col-xs-12.col-sm-12.col-md-1
 		.row
 			form#search_member.col-xs-12.col-sm-12.col-md-12
 				input(type="text",ng-model="searchmembers").col-xs-10.col-sm-10.col-md-11
 				a.glyphicon.glyphicon-search.col-xs-2.col-md-1
-		ul.subnav.row
-			li.active.col-xs-3.col-sm-3.col-md-3
-				a.glyphicon.glyphicon-home
-			li.active.col-xs-3.col-sm-3.col-md-3
-				a.glyphicon.glyphicon-user
-			li.active.col-xs-3.col-sm-3.col-md-3
-				a.glyphicon.glyphicon-list-alt
-			li.active.col-xs-3.col-sm-3.col-md-3
-				a.glyphicon.glyphicon-cog
+		.row
+			ul.subnav.col-xs-12.col-sm-12.col-md-12
+				li.active.col-xs-3.col-sm-3.col-md-12
+					a.glyphicon.glyphicon-home
+				li.active.col-xs-3.col-sm-3.col-md-12
+					a.glyphicon.glyphicon-user
+				li.active.col-xs-3.col-sm-3.col-md-12
+					a.glyphicon.glyphicon-list-alt
+				li.active.col-xs-3.col-sm-3.col-md-12
+					a.glyphicon.glyphicon-cog
 
 	block content

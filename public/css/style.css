@@ -13,6 +13,10 @@ li {list-style: none; }
 a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
 
 @media (max-width: 768px) {
+    .container{
+        padding-left:0;
+        padding-right:0;
+    }
     .row{margin-left:-15px;}
     body {padding:0;}
     .circular_image img {
@@ -25,19 +29,19 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
         border-radius: 30px;
     }
     /* Masthead */
-    nav.container {
+    nav {
         background-color: #00af5e;
         color:white;
         padding-top:10px;
     }
-    nav.container input{
+    nav input{
         border:1px solid #2D7A5E;
         border-radius: 5px;
         color:#000;
         height:35px;
     }
 
-    nav.container form {
+    nav form {
         font-size: 2em;
     }
 
@@ -147,34 +151,21 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
     .text-large {
         font-size:55px;
     }
-
-    nav.container {
-        background-color: #00af5e;
-        color:white;
-        padding-top:20px;
+    .container {
+        margin-left:0;
+        margin-right:0;
     }
-    nav.container input{
+    /* Masthead */
+    nav {
+    }
+    nav > div:first-child {
+        display:none;
+    }
+    nav input{
         border:1px solid #2D7A5E;
         border-radius: 5px;
         color:#000;
         height:45px;
-    }
-
-    /* Masthead */
-    nav.container {
-        background-color: #00af5e;
-        color:white;
-        padding-top:10px;
-    }
-    nav.container input{
-        border:1px solid #2D7A5E;
-        border-radius: 5px;
-        color:#000;
-        height:35px;
-    }
-
-    nav.container form {
-        font-size: 2em;
     }
 
     nav form a {
@@ -190,34 +181,28 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
     }
 
     nav ul {
-        background-color: slategray;
+        background-color: black;
         color:#0480be;
     }
 
     .subnav {
         padding-top:10px;
-        margin-top:10px;
+        margin-left:-15px;
     }
 
     .subnav li {
         text-align: center;
         font-size: 2em;
+        display:block;
+        padding:40px 0;
+        border:none;
     }
-
     .subnav li a {
         color:white;
     }
 
     .subnav li a:active, .subnav li a:hover {
         color:#00af5e;
-    }
-
-    .subnav li {
-        border-right:1px solid white;
-    }
-
-    .subnav li:last-child {
-        border-right:none;
     }
 
     /* Member User */
