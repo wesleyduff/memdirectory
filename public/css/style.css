@@ -7,6 +7,7 @@ a {
   color: #00B7FF;
 }
 @media (max-width: 767px) {
+    .fullwidth {margin-left:-15px; margin-right:-15px;}
     ul { margin:0; padding:0; }
     li {list-style: none; }
     a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
@@ -95,15 +96,47 @@ a {
     }
     .members .user div:first-child a {
         margin-bottom:0;
-        border: 6px solid rgb(132, 155, 204);
         height: 74px;
         width: 74px;
         display: block;
-        border-radius: 37px;
         padding: 1px;
+    }
+
+    .members .user > div:nth-child(2) {
+        margin-top:60px;
     }
 
     .members .user img.clipCircle {
         clip-path: circle(245px, 140px, 50px);;
+    }
+    .members .user img.rectangle_image {
+        top:-58px;
+        clip: rect(44px 291px 184px 0px);
+        position:absolute;
+    }
+
+    /* More info for Members */
+    .members .userMore {
+        font-weight: bold;
+        text-align: left;
+        margin:10px 0;
+        padding:0;
+    }
+    .members .userMore > div > div:first-child{
+        padding: 13px;
+        font-size: 18px;
+    }
+
+    .members .userMore > div div:last-child{
+        padding-top:15px;
+    }
+    .members .userMore > div {
+        background-color:#F0F0F0;
+        border-top:1px solid slateblue;
+        border-bottom:1px solid slateblue;
+        padding-left:10px;
+    }
+    .members .userMore > div div:last-child {
+        color:#00af5e;
     }
 }

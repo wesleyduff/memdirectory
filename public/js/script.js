@@ -33,7 +33,7 @@ angular.module('app', [])
 .factory('userGen', function($http){
     return {
         getUsers : function(callback){
-           $http.get('http://api.randomuser.me/0.3.1/?results=15').success(callback);
+           $http.get('http://api.randomuser.me/0.3.1/?results=15&seed=mean').success(callback);
         }
     }
 })
