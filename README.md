@@ -14,6 +14,9 @@ MEAN + Friends
 * Connect (Server : DELETE and PUT method Overrides)
 * BootStrap (CSS Framework)
 
+### API for random Users ###
+* http://randomuser.me/
+
 ## HOSTING (FREE!!) ##
 * Heroku (git based hosting service)
 
@@ -91,14 +94,14 @@ GETTING STARTED
 
 > 1. open terminal
 > 2. cd into your folder where you want to create your application
-> 3. mkdir mean-boilerplate
+> 3. mkdir memdir
 >   - You can call it something else if you like
 > 4. git init
 >   - This initializes your repository
-> 5. git remote add stack https://github.com/&lt;yourname&gt;/&lt;your repo&gt;
+> 5. git remote add stack https://github.com/yourname/your repo;
 >   - Example Mine is https://github.com/slysop/mean-boilerplate
-> 6. Clone my repository from github to your folder
->   - URL : http://github.com/slysop/mean-boilerplate
+> 6. git clone http://github.com/slysop/memdirecotry.git Clone my repository from github to your folder
+>		- This clones the code to your box
 > 7. Once you have the code on your local machine and everything is installed open you terminal if it is not already open and type
 
 	$ mongostart
@@ -110,14 +113,3 @@ GETTING STARTED
 >> This starts your app on localhost:3000
 
 NOTE : ctrl + c to stop the node server and the mongodb server. The node server and the mongodb server need to be started in their own terminal windows.
-
-Basic setup 
-------------
-Factory "userFactory" is a service that calls the web api "Save User" to save the user to the mongo database.
-Review /routes/user.js -> Method doCreate.
-JSON is returned with the error or the user that was saved.
-
-Updated : 11/7/2013
-Check back for updates. 
-As of right now Twitter bootstrap is not included in this boiler plate stack.
-I will add it in by 11/10/2013
