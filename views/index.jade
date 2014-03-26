@@ -1,21 +1,25 @@
 extends layout
 
 block content
-	.col-xs-12.col-md-11
-		h1 Church Members
-		.members.col-xs-12
-			ul
-				li(ng-repeat="iuser in allGenUsers | filter:searchmembers").user.row
-					.col-xs-12.col-sm-12.col-md-2
-						a
-							img(ng-src="{{iuser.user.picture}}", height="300").rectangle_image
-					.col-xs-12.col-sm-12.col-md-9.col-md-offset-1
-						ul
-							li.text-large {{iuser.user.name.first}} {{iuser.user.name.last}}
-							li email : {{iuser.user.email}}
-					.col-xs-12.userMore
-						.fullwidth.row
-							.col-xs-10 More info
-							.col-xs-2.glyphicon.glyphicon-plus
-						.row(style="display:none;")
-							.col-xs-12
+			h1 Church Members
+			.members
+				ul
+					li(ng-repeat="iuser in allGenUsers | filter:searchmembers").user.row
+						.col-xs-12.col-sm-12.col-md-2
+							a
+								img(ng-src="{{iuser.user.picture}}", height="300").rectangle_image
+						.col-xs-12.col-sm-12.col-md-9.col-md-offset-1
+							ul
+								li.text-large {{iuser.user.name.first}} {{iuser.user.name.last}}
+								li email : {{iuser.user.email}}
+						button.btn.btn-default.col-xs-12.userMore(id="collapse{{iuser.user.username}}", data-toggle="collapse", data-target="#moreinfo{{iuser.user.username}}") More Info
+						.collapse(id="moreinfo{{iuser.user.username}}")
+							address
+								| {{iuser.user.location.street}}
+								br
+								| {{iuser.user.location.city}}
+								br
+								| {{iuser.user.location.state}} {{iuser.user.location.zip}}
+							b
+								| Phone # : {{iuser.user.phone}}
+								br Cell # : {{iuser.user.cell}}

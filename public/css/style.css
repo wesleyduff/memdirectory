@@ -2,23 +2,18 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+body,p,ul,li{
+    padding:0;
+    margin:0;
+}
 a {
   color: #00B7FF;
 }
 
-.fullwidth {margin-left:-15px; margin-right:-15px;}
 ul { margin:0; padding:0; }
 li {list-style: none; }
 a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
-
 @media (max-width: 768px) {
-    .container{
-        padding-left:0;
-        padding-right:0;
-    }
-    .row{margin-left:-15px;}
-    body {padding:0;}
     .circular_image img {
         width:60px;
         height:60px;
@@ -30,63 +25,12 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
     }
     /* Masthead */
     nav {
-        background-color: #00af5e;
-        color:white;
-        padding-top:10px;
-    }
-    nav input{
-        border:1px solid #2D7A5E;
-        border-radius: 5px;
-        color:#000;
-        height:35px;
+        padding:0 35px;
     }
 
-    nav form {
-        font-size: 2em;
+    nav li {
+        padding:10px 35px;
     }
-
-    nav form a {
-        color:white;
-    }
-
-    nav form a:visited {
-        color:white;
-    }
-
-    nav form a:active, nav form a:hover {
-        color:#2D7A5E;
-    }
-
-    nav ul {
-        background-color: slategray;
-        color:#0480be;
-    }
-
-        .subnav {
-            padding-top:10px;
-            margin-top:10px;
-        }
-
-        .subnav li {
-            text-align: center;
-            font-size: 2em;
-        }
-
-        .subnav li a {
-            color:white;
-        }
-
-        .subnav li a:active, .subnav li a:hover {
-            color:#00af5e;
-        }
-
-        .subnav li {
-            border-right:1px solid white;
-        }
-
-        .subnav li:last-child {
-            border-right:none;
-        }
 
     /* Members */
     .members {
@@ -100,7 +44,7 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
     .members .user div:first-child {
         padding:0;
     }
-    .members .user div:first-child a {
+    .members .user > div:first-child a {
         margin-bottom:0;
         height: 74px;
         width: 74px;
@@ -133,8 +77,12 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
         font-size: 18px;
     }
 
-    .members .userMore > div div:last-child{
+    .members .userMore > div > div:last-child{
         padding-top:15px;
+    }
+    .members .userMore > div > div:last-child.panel-collapse {
+        color:#aaa;
+        padding:0;
     }
     .members .userMore > div {
         background-color:#F0F0F0;
@@ -142,68 +90,21 @@ a:visited, a:hover, a:active, a:focus  {text-decoration: none; }
         border-bottom:1px solid slateblue;
         padding-left:10px;
     }
-    .members .userMore > div div:last-child {
+    .members .userMore > div > div:last-child {
         color:#00af5e;
+    }
+
+    /* Members More Content */
+    .members .userMore_content {
+        border-bottom:1px solid #CCC;
+        margin-bottom:10px;
     }
 }
 
 @media (min-width: 992px) {
-    .text-large {
-        font-size:55px;
-    }
-    .container {
-        margin-left:0;
-        margin-right:0;
-    }
+
     /* Masthead */
-    nav {
-    }
-    nav > div:first-child {
-        display:none;
-    }
-    nav input{
-        border:1px solid #2D7A5E;
-        border-radius: 5px;
-        color:#000;
-        height:45px;
-    }
 
-    nav form a {
-        color:white;
-    }
-
-    nav form a:visited {
-        color:white;
-    }
-
-    nav form a:active, nav form a:hover {
-        color:#2D7A5E;
-    }
-
-    nav ul {
-        background-color: black;
-        color:#0480be;
-    }
-
-    .subnav {
-        padding-top:10px;
-        margin-left:-15px;
-    }
-
-    .subnav li {
-        text-align: center;
-        font-size: 2em;
-        display:block;
-        padding:40px 0;
-        border:none;
-    }
-    .subnav li a {
-        color:white;
-    }
-
-    .subnav li a:active, .subnav li a:hover {
-        color:#00af5e;
-    }
 
     /* Member User */
     .members .user > div:first-child a {
